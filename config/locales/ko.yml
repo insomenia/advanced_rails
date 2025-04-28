@@ -1,0 +1,23 @@
+ko:
+  activerecord:
+    models:
+      post: 게시글
+      user: 사용자
+      comment: 댓글
+      attachment: 첨부 파일
+
+    attributes:
+      post:
+        title: 제목
+        body: 내용
+        published: 공개 여부
+
+    errors: 
+      models:
+        post:
+          attributes:
+            title:
+              blank: 을 입력해주세요
+            body:
+              blank: 내용을 입력해주세요
+              too_short: 내용이 너무 짧습니다
