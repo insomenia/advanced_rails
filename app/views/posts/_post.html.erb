@@ -1,0 +1,4 @@
+<%= link_to post, data: { turbo_frame: "_top" } do %>
+  <p style="margin-bottom: 10px; border:1px solid #ccc; padding: 10px;"><%= post.id %>. <%= post.title %> - <%= post.user.name %> - 
+    공개일: <%= format_date(post.published_at) %> / 생성일: <%= format_date(post.created_at, :relative) %></p>
+<% end %>

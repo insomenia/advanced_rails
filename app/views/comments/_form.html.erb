@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "comment_form" do %>
+  <%= form_with model: [ @post, Comment.new ], data: { controller: "reset-form" } do |form| %>
+    <%= form.text_field :user_id %>
+    <br />
+    <%= form.text_area :body %>
+    <br />
+    <%= form.submit "댓글 작성" %>
+  <% end %>
+<% end %>

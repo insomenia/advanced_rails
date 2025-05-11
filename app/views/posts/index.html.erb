@@ -1,0 +1,13 @@
+<% content_for(:title, "게시물 목록") %>
+<% content_for :head do %>
+  <meta name="description" content="게시물 목록 페이지">
+  <meta name="keywords" content="게시물, 목록">
+<% end %>
+<div style="margin:50px;">
+  <%= turbo_frame_tag "posts" do%>
+    <%= render @posts %>
+  <% end %>
+  <%= turbo_frame_tag "new_post" do %>
+    <%= link_to "새 게시물", new_post_path %>
+  <% end %>
+</div>

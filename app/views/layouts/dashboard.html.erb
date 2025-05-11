@@ -18,10 +18,12 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
+    <h1>Dashboard</h1>
     <%= render "shared/header" %>
     <%= render "shared/flash" %>
     <div class="container" id="main">
       <%= yield %>
     </div>
+    <%= yield :javascripts %>
   </body>
 </html>

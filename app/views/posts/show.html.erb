@@ -1,0 +1,22 @@
+<%= turbo_stream_from @post %>
+<div style="margin-top: 20px;margin-left:50px;">
+  <h1><%= @post.title %></h1>
+  <%= @post.body %>
+  <p>작성자: <%= @post.user.name %></p>
+  <%= link_to "수정", edit_post_path(@post) %>
+  <%= button_to "삭제", @post, method: :delete %>
+  <h2>댓글</h2>
+  <%# /posts/:post_id/comments/:id HTTP: POST %>
+  <%= turbo_frame_tag "comment_form" do %>
+    <%= render "comments/form" %>
+  <% end %>
+  <div data-controller="toggle">
+    <button data-action="click->toggle#toggle">
+      댓글 보이기/숨기기
+    </button>
+    <div data-toggle-target="content" style="display:none">
+      <%= turbo_frame_tag "comments" do %>
+        <%= render @post.comments %>
+      <% end %>
+    </div>
+  </div>
